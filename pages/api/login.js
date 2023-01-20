@@ -6,7 +6,7 @@ export default( req, res) => {
         httpOnly: true,
         secure: true, //process.env.NODE_ENV !== "development",
         maxAge: 60*60,
-        sameSite: "none",
+        sameSite: "strict",
         path:"/",
         domain:".airnhschool.com"
         

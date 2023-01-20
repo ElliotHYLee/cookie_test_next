@@ -18,19 +18,19 @@ export default function Home({token}) {
       </Head>
       <main className={styles.main}>
         <div>
-          hello worlddddd4
+          hello worlddddd5
         </div>
         <h2> Token: {token}</h2>
-       <button onClick={ ()=>{
-        // Cookies.set("token", "ABCD", {expires:1/24})
-        fetch("/api/login",{
-          method: "post",
-          headers:{
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({token:"ABCD"})
-        })
-       }}>
+        <button onClick={ ()=>{
+          // Cookies.set("token", "ABCD", {expires:1/24})
+          fetch("/api/login",{
+            method: "post",
+            headers:{
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({token:"ABCD"})
+          })
+        }}>
 
         set cookie
 
