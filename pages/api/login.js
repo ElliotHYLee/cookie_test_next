@@ -8,8 +8,8 @@ export default( req, res) => {
         maxAge: 60*60,
         sameSite: "none",
         path:"/",
-        
-        
+        domain:"*.airnhschool.com"
+       
     }))
     res.statusCode = 200;
     res.json({success:true})
