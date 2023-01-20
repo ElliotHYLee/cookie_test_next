@@ -6,8 +6,9 @@ export default( req, res) => {
         httpOnly: true,
         secure: false, //process.env.NODE_ENV !== "development",
         maxAge: 60*60,
-        sameSite: "strict",
+        sameSite: "none",
         path:"/",
+        domain:"*.airnhschool.com"
     }))
     res.statusCode = 200;
     res.json({success:true})
