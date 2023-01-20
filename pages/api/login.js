@@ -4,10 +4,11 @@ export default( req, res) => {
 
     res.setHeader("Set-Cookie", cookie.serialize("token", req.body.token + "ssradded", {
         httpOnly: true,
-        secure: false, //process.env.NODE_ENV !== "development",
+        secure: true, //process.env.NODE_ENV !== "development",
         maxAge: 60*60,
         sameSite: "none",
         path:"/",
+        
         
     }))
     res.statusCode = 200;
