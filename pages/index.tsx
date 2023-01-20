@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
@@ -5,7 +7,7 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({token}) {
   return (
     <>
       <Head>
@@ -18,7 +20,41 @@ export default function Home() {
         <div>
           hello world
         </div>
+        <h2> Token: {token}</h2>
+       <button onClick={ ()=>{
+        // Cookies.set("token", "ABCD", {expires:1/24})
+        fetch("/api/login",{
+          method: "post",
+          headers:{
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({token:"ABCD"})
+        })
+       }}>
+
+        set cookie
+
+       </button>
+       <button onClick={ ()=>{
+        // Cookies.remove("token")
+        fetch("/api/logout",{
+          method: "post",
+          headers:{
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({})
+        })
+       }}>
+
+        remove cookie
+
+       </button>
       </main>
     </>
   )
+}
+
+export function getServerSideProps({req, res}){
+  // console.log(req.cookies.token)
+  return {props:{token:req.cookies.token || ""}}
 }
