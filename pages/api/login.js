@@ -8,7 +8,7 @@ export default( req, res) => {
         maxAge: 60*60,
         sameSite: "strict",
         path:"/",
-        domain:"*.airnhschool.com"
+        domain:".airnhschool.com" // don't put "*" in front of domain
         
         
     }))
