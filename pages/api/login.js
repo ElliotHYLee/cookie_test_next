@@ -8,7 +8,7 @@ export default( req, res) => {
         maxAge: 60*60,
         sameSite: "strict",
         path:"/",
-        domain:".airnhschool.com"
+        domain:"sub2.airnhschool.com"
         
         
     }))
