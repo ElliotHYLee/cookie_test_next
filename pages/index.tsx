@@ -18,7 +18,7 @@ export default function Home({token}) {
       </Head>
       <main className={styles.main}>
         <div>
-          hello worlddddd
+          hello worlddddd2
         </div>
         <h2> Token: {token}</h2>
        <button onClick={ ()=>{
